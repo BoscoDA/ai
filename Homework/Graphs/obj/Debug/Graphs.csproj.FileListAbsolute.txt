@@ -1,0 +1,12 @@
+C:\workspace\src\ai\Homework\Graphs\bin\Debug\Graphs.exe.config
+C:\workspace\src\ai\Homework\Graphs\bin\Debug\Graphs.exe
+C:\workspace\src\ai\Homework\Graphs\bin\Debug\Graphs.pdb
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.csproj.AssemblyReference.cache
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.csproj.SuggestedBindingRedirects.cache
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.Form1.resources
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.Properties.Resources.resources
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.csproj.GenerateResource.cache
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.csproj.CoreCompileInputs.cache
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.exe
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.pdb
+C:\workspace\src\ai\Homework\Graphs\obj\Debug\Graphs.frmGraph.resources

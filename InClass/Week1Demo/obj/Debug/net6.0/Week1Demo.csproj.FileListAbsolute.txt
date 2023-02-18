@@ -1,0 +1,15 @@
+C:\workspace\src\ai\InClass\Week1Demo\bin\Debug\net6.0\Week1Demo.exe
+C:\workspace\src\ai\InClass\Week1Demo\bin\Debug\net6.0\Week1Demo.deps.json
+C:\workspace\src\ai\InClass\Week1Demo\bin\Debug\net6.0\Week1Demo.runtimeconfig.json
+C:\workspace\src\ai\InClass\Week1Demo\bin\Debug\net6.0\Week1Demo.dll
+C:\workspace\src\ai\InClass\Week1Demo\bin\Debug\net6.0\Week1Demo.pdb
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.csproj.AssemblyReference.cache
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.AssemblyInfoInputs.cache
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.AssemblyInfo.cs
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.csproj.CoreCompileInputs.cache
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.dll
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\refint\Week1Demo.dll
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.pdb
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\Week1Demo.genruntimeconfig.cache
+C:\workspace\src\ai\InClass\Week1Demo\obj\Debug\net6.0\ref\Week1Demo.dll
