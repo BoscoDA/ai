@@ -10,6 +10,11 @@ namespace Week6PermutationsAndCounting
 {
     internal class Permutation
     {
+        /// <summary>
+        /// Returns the factorial of n
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static BigInteger Factorial(BigInteger n)
         {
             //factorial of 1 and 0 are both 1
@@ -25,16 +30,30 @@ namespace Week6PermutationsAndCounting
             }
         }
 
+        /// <summary>
+        /// Returns the number of permutations that can be made with a set of n elements taken r at a time
+        /// </summary>
+        /// <param name="n">Number of elements</param>
+        /// <param name="r">How many elements per permutation</param>
+        /// <returns></returns>
         public static BigInteger CalcNPR(BigInteger n, BigInteger r)
         {
+            // n!/(n-r)!
             BigInteger nFac = Factorial(n);
             BigInteger denomFac = Factorial(n - r);
 
             return nFac / denomFac;
         }
 
+        /// <summary>
+        /// Returns the number of combinations that can be made with a set of n elements taken r at a time
+        /// </summary>
+        /// <param name="n">Number of elements</param>
+        /// <param name="r">How many elements per combination</param>
+        /// <returns></returns>
         public static BigInteger Combinations(BigInteger n, BigInteger r)
         {
+            // n! / ((n-r)! * r!)
             BigInteger nFac = Factorial(n);
             BigInteger denomFac = Factorial(n - r);
             BigInteger rFac = Factorial(r);
@@ -42,6 +61,12 @@ namespace Week6PermutationsAndCounting
             return nFac / (denomFac * rFac);
         }
 
+        /// <summary>
+        /// Returns the number of ordered partitions of the input string
+        /// </summary>
+        /// <param name="n">number of elements</param>
+        /// <param name="input">string you want the ordered partitions of</param>
+        /// <returns></returns>
         public static BigInteger OrderedPartitions(BigInteger n, string input)
         {
             // use a dictionary to keep track of each character used and store it with the number 
@@ -77,6 +102,12 @@ namespace Week6PermutationsAndCounting
             return numerator / denominator;
         }
 
+        /// <summary>
+        /// Returns a string list of all possible permutations of the input string of size r
+        /// </summary>
+        /// <param name="input">string that will be permutated</param>
+        /// <param name="r">number of characrers in each permutation</param>
+        /// <returns></returns>
         public static List<string> stringPerm(string input, int r)
         {
             List<char> myString = input.ToList();
@@ -127,6 +158,12 @@ namespace Week6PermutationsAndCounting
             return ans;
         }
 
+        /// <summary>
+        /// Returns a string list of all possible combinations of the input string of size r
+        /// </summary>
+        /// <param name="input">string that will be permutated</param>
+        /// <param name="r">number of characrers in each combination</param>
+        /// <returns></returns>
         public static List<string> StringCombination(string input, int r)
         {
             List<char> myString = input.ToList();
@@ -184,6 +221,11 @@ namespace Week6PermutationsAndCounting
             return ans;
         }
 
+        /// <summary>
+        /// Returns a string list of all the possible ordered partitions of the input string
+        /// </summary>
+        /// <param name="input">string that will be partitioned</param>
+        /// <returns></returns>
         public static List<string> stringPartition(string input)
         {
             List<char> myString = input.ToList();
@@ -193,6 +235,13 @@ namespace Week6PermutationsAndCounting
             return RecurPartition(myString, list, ans);
         }
 
+        /// <summary>
+        /// Funcation that recursively builds all the partitions of the string input
+        /// </summary>
+        /// <param name="input">char array that acts as the input string</param>
+        /// <param name="output">char array to act as the current string being build</param>
+        /// <param name="ans">list of strings to be outputted</param>
+        /// <returns></returns>
         public static List<string> RecurPartition(List<char> input, List<char> output, List<string> ans)
         {
             if (input.Count == 0)
