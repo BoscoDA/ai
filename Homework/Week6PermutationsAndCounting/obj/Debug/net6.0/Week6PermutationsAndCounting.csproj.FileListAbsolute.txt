@@ -1,0 +1,15 @@
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\bin\Debug\net6.0\Week6PermutationsAndCounting.exe
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\bin\Debug\net6.0\Week6PermutationsAndCounting.deps.json
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\bin\Debug\net6.0\Week6PermutationsAndCounting.runtimeconfig.json
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\bin\Debug\net6.0\Week6PermutationsAndCounting.dll
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\bin\Debug\net6.0\Week6PermutationsAndCounting.pdb
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.csproj.AssemblyReference.cache
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.AssemblyInfoInputs.cache
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.AssemblyInfo.cs
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.csproj.CoreCompileInputs.cache
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.dll
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\refint\Week6PermutationsAndCounting.dll
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.pdb
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\Week6PermutationsAndCounting.genruntimeconfig.cache
+C:\workspace\src\ai\Homework\Week6PermutationsAndCounting\obj\Debug\net6.0\ref\Week6PermutationsAndCounting.dll
