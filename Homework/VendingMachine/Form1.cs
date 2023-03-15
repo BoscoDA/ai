@@ -99,6 +99,7 @@ namespace VendingMachine
 
         public void UpdateOutputLog()
         {
+            //reference this stack overflow post for this code: https://stackoverflow.com/questions/13505248/how-to-make-autoscroll-multiline-textbox-in-winforms
             tb_output_log.Text += output + Environment.NewLine;
             tb_output_log.SelectionStart = tb_output_log.TextLength;
             tb_output_log.ScrollToCaret();
