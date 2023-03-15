@@ -42,7 +42,7 @@ namespace VendingMachine
             transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.PAY), new KeyValuePair<State, Output>(State.SELECT, Output.NONE));
             transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.SELECT), new KeyValuePair<State, Output>(State.VEND, Output.NONE));
             transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.CANCEL), new KeyValuePair<State, Output>(State.IDLE, Output.QUARTER));
-            transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.RETRIEVE), new KeyValuePair<State, Output>(State.IDLE, Output.NONE));
+            transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.RETRIEVE), new KeyValuePair<State, Output>(State.SELECT, Output.NONE));
 
             transistions.Add(new KeyValuePair<State, Input>(State.VEND, Input.PAY), new KeyValuePair<State, Output>(State.VEND, Output.QUARTER));
             transistions.Add(new KeyValuePair<State, Input>(State.VEND, Input.SELECT), new KeyValuePair<State, Output>(State.VEND, Output.NONE));
