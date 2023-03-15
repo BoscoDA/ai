@@ -119,8 +119,6 @@ namespace VendingMachine
             moneyInput += quarter.Value;
         }
 
-        
-
         private void UpdateMoney(decimal purchasePrice)
         {
             moneyInput -= purchasePrice;
