@@ -148,7 +148,7 @@ namespace VendingMachine
 
             Output output = Output.NONE;
 
-            if (moneyInput >= outputObject.Value)
+            if (moneyInput >= outputObject.Value && state != State.VEND)
             {
                 try
                 {
@@ -204,8 +204,8 @@ namespace VendingMachine
 
         private void btn_retrieve_Click(object sender, EventArgs e)
         {
+            vendOutput = "";
             ChangeState(Input.RETRIEVE);
-            tb_output.Text = "";
         }
 
         private void tb_take_change_Click(object sender, EventArgs e)
