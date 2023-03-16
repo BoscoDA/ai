@@ -31,6 +31,9 @@ namespace VendingMachine
             FSMSetup();
         }
 
+        /// <summary>
+        /// Adds transitions to the transition dictionary and output starting state and money values on screen
+        /// </summary>
         public void FSMSetup()
         {
             transistions = new Dictionary<KeyValuePair<State, Input>, KeyValuePair<State, Output>>();
@@ -53,16 +56,26 @@ namespace VendingMachine
             tb_money.Text = moneyInput.ToString();
         }
 
+        /// <summary>
+        /// Updates the global variable for the current output after a transition
+        /// </summary>
+        /// <param name="output"></param>
         public void UpdateOutput(Output output)
         {
             this.output = output.ToString();
         }
 
+        /// <summary>
+        /// Updates the VendOutput varibale used for keeping track of what is in the vending machine tray
+        /// </summary>
         public void UpdateVendOutput()
         {
             vendOutput = output;
         }
 
+        /// <summary>
+        /// Updates the number of quarters that are in the change tray
+        /// </summary>
         private void UpdateChange()
         {
             int temp = (int)(moneyInput / Quarter.Instance.Value);
@@ -78,6 +91,9 @@ namespace VendingMachine
             }
         }
 
+        /// <summary>
+        /// Used to update the information presented on the screen (state, outputs, money input, and change)
+        /// </summary>
         public void UpdateScreen()
         {
             if (output == Output.GUM.ToString() || output == Output.GRANOLA.ToString())
@@ -97,6 +113,9 @@ namespace VendingMachine
 
         } 
 
+        /// <summary>
+        /// Add most recent actions output to the output log
+        /// </summary>
         public void UpdateOutputLog()
         {
             //reference this stack overflow post for this code: https://stackoverflow.com/questions/13505248/how-to-make-autoscroll-multiline-textbox-in-winforms
@@ -105,6 +124,11 @@ namespace VendingMachine
             tb_output_log.ScrollToCaret();
         }
 
+
+        /// <summary>
+        /// Changes state based on the input passed into the method
+        /// </summary>
+        /// <param name="input"></param>
         public void ChangeState(Input input)
         {
             KeyValuePair<State, Input> temp = new KeyValuePair<State, Input>(state, input);
@@ -115,16 +139,28 @@ namespace VendingMachine
             UpdateOutputLog();
         }
 
+        /// <summary>
+        /// Updates how much money is inputed to the machine
+        /// </summary>
+        /// <param name="quarter"></param>
         private void AddMoney(Quarter quarter)
         {
             moneyInput += quarter.Value;
         }
 
+        /// <summary>
+        /// Updates money in machine based off of the price of the item pruchased
+        /// </summary>
+        /// <param name="purchasePrice"></param>
         private void UpdateMoney(decimal purchasePrice)
         {
             moneyInput -= purchasePrice;
         }
 
+        /// <summary>
+        /// Determine what item was selected when using a select input
+        /// </summary>
+        /// <returns></returns>
         private OutputBase DetermineInput()
         {
             string temp = "";
@@ -142,6 +178,11 @@ namespace VendingMachine
             return input;
         }
 
+        /// <summary>
+        /// Updates the transtions revolving around the select input to have the proper output for the given transition
+        /// </summary>
+        /// <param name="outputObject"></param>
+        /// <returns></returns>
         private bool DetermineOutput(OutputBase outputObject)
         {
             Input input = Input.SELECT;
