@@ -62,6 +62,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tb_take_change = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.gbox_select.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -130,7 +131,7 @@
             // 
             // tb_money
             // 
-            this.tb_money.Location = new System.Drawing.Point(544, 59);
+            this.tb_money.Location = new System.Drawing.Point(544, 60);
             this.tb_money.Name = "tb_money";
             this.tb_money.ReadOnly = true;
             this.tb_money.Size = new System.Drawing.Size(89, 20);
@@ -407,11 +408,21 @@
             this.tb_take_change.UseVisualStyleBackColor = true;
             this.tb_take_change.Click += new System.EventHandler(this.tb_take_change_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(540, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Balance";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.tb_take_change);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -489,6 +500,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button tb_take_change;
+        private System.Windows.Forms.Label label12;
     }
 }
 

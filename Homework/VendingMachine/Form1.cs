@@ -43,17 +43,19 @@ namespace VendingMachine
             transistions.Add(new KeyValuePair<State, Input>(State.IDLE, Input.RETRIEVE), new KeyValuePair<State, Output>(State.IDLE, Output.NONE));
 
             transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.PAY), new KeyValuePair<State, Output>(State.SELECT, Output.NONE));
-            transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.SELECT), new KeyValuePair<State, Output>(State.VEND, Output.NONE));
+            transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.SELECT), new KeyValuePair<State, Output>(State.VENDED, Output.NONE));
             transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.CANCEL), new KeyValuePair<State, Output>(State.IDLE, Output.QUARTER));
             transistions.Add(new KeyValuePair<State, Input>(State.SELECT, Input.RETRIEVE), new KeyValuePair<State, Output>(State.SELECT, Output.NONE));
 
-            transistions.Add(new KeyValuePair<State, Input>(State.VEND, Input.PAY), new KeyValuePair<State, Output>(State.VEND, Output.QUARTER));
-            transistions.Add(new KeyValuePair<State, Input>(State.VEND, Input.SELECT), new KeyValuePair<State, Output>(State.VEND, Output.NONE));
-            transistions.Add(new KeyValuePair<State, Input>(State.VEND, Input.CANCEL), new KeyValuePair<State, Output>(State.VEND, Output.QUARTER));
-            transistions.Add(new KeyValuePair<State, Input>(State.VEND, Input.RETRIEVE), new KeyValuePair<State, Output>(State.IDLE, Output.NONE));
+            transistions.Add(new KeyValuePair<State, Input>(State.VENDED, Input.PAY), new KeyValuePair<State, Output>(State.VENDED, Output.QUARTER));
+            transistions.Add(new KeyValuePair<State, Input>(State.VENDED, Input.SELECT), new KeyValuePair<State, Output>(State.VENDED, Output.NONE));
+            transistions.Add(new KeyValuePair<State, Input>(State.VENDED, Input.CANCEL), new KeyValuePair<State, Output>(State.VENDED, Output.NONE));
+            transistions.Add(new KeyValuePair<State, Input>(State.VENDED, Input.RETRIEVE), new KeyValuePair<State, Output>(State.IDLE, Output.QUARTER));
 
             tb_state.Text = state.ToString();
             tb_money.Text = moneyInput.ToString();
+
+            UpdateScreen();
         }
 
         /// <summary>
@@ -80,7 +82,12 @@ namespace VendingMachine
         {
             int temp = (int)(moneyInput / Quarter.Instance.Value);
 
-            if (temp > 0)
+            if(state == State.VENDED)
+            {
+                quarterReturnNum++;
+            }
+
+            else if (temp > 0)
             {
                 quarterReturnNum += temp;
                 moneyInput = 0.00M;
@@ -145,7 +152,10 @@ namespace VendingMachine
         /// <param name="quarter"></param>
         private void AddMoney(Quarter quarter)
         {
-            moneyInput += quarter.Value;
+            if(state != State.VENDED)
+            {
+                moneyInput += quarter.Value;
+            }
         }
 
         /// <summary>
@@ -190,7 +200,7 @@ namespace VendingMachine
 
             Output output = Output.NONE;
 
-            if (moneyInput >= outputObject.Value && state != State.VEND)
+            if (moneyInput >= outputObject.Value && state != State.VENDED)
             {
                 try
                 {
@@ -203,7 +213,7 @@ namespace VendingMachine
 
                 transistions.Remove(temp);
 
-                transistions.Add(new KeyValuePair<State, Input>(state, Input.SELECT), new KeyValuePair<State, Output>(State.VEND, output));
+                transistions.Add(new KeyValuePair<State, Input>(state, Input.SELECT), new KeyValuePair<State, Output>(State.VENDED, output));
 
                 return true;
             }
@@ -247,6 +257,7 @@ namespace VendingMachine
         private void btn_retrieve_Click(object sender, EventArgs e)
         {
             vendOutput = "";
+            UpdateChange();
             ChangeState(Input.RETRIEVE);
         }
 
@@ -277,6 +288,6 @@ namespace VendingMachine
     {
         IDLE,
         SELECT,
-        VEND
+        VENDED
     }
 }
