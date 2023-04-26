@@ -1,0 +1,15 @@
+C:\workspace\src\ai\InClass\neuralnetwork\bin\Debug\net7.0\neuralnetwork.exe
+C:\workspace\src\ai\InClass\neuralnetwork\bin\Debug\net7.0\neuralnetwork.deps.json
+C:\workspace\src\ai\InClass\neuralnetwork\bin\Debug\net7.0\neuralnetwork.runtimeconfig.json
+C:\workspace\src\ai\InClass\neuralnetwork\bin\Debug\net7.0\neuralnetwork.dll
+C:\workspace\src\ai\InClass\neuralnetwork\bin\Debug\net7.0\neuralnetwork.pdb
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.csproj.AssemblyReference.cache
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.AssemblyInfoInputs.cache
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.AssemblyInfo.cs
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.csproj.CoreCompileInputs.cache
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.dll
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\refint\neuralnetwork.dll
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.pdb
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\neuralnetwork.genruntimeconfig.cache
+C:\workspace\src\ai\InClass\neuralnetwork\obj\Debug\net7.0\ref\neuralnetwork.dll

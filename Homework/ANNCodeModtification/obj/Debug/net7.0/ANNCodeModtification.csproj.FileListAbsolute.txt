@@ -1,0 +1,15 @@
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.csproj.AssemblyReference.cache
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.AssemblyInfoInputs.cache
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.AssemblyInfo.cs
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.csproj.CoreCompileInputs.cache
+C:\workspace\src\ai\Homework\ANNCodeModtification\bin\Debug\net7.0\ANNCodeModtification.exe
+C:\workspace\src\ai\Homework\ANNCodeModtification\bin\Debug\net7.0\ANNCodeModtification.deps.json
+C:\workspace\src\ai\Homework\ANNCodeModtification\bin\Debug\net7.0\ANNCodeModtification.runtimeconfig.json
+C:\workspace\src\ai\Homework\ANNCodeModtification\bin\Debug\net7.0\ANNCodeModtification.dll
+C:\workspace\src\ai\Homework\ANNCodeModtification\bin\Debug\net7.0\ANNCodeModtification.pdb
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.dll
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\refint\ANNCodeModtification.dll
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.pdb
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ANNCodeModtification.genruntimeconfig.cache
+C:\workspace\src\ai\Homework\ANNCodeModtification\obj\Debug\net7.0\ref\ANNCodeModtification.dll
