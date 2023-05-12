@@ -26,54 +26,70 @@ namespace Final
 
         public void Run()
         {
-            List<string> temples = new List<string>()
+            bool end = false;
+            while (!end)
+            {
+                List<string> temples = new List<string>()
             {
                 "Water",
                 "Forest",
                 "Fire"
             };
 
-            Console.Write($"\nWhich temple would you like to go to?");
-            Console.WriteLine("\nTemples:");
-
-            foreach (var item in temples)
-            {
-                Console.WriteLine("- " + item);
-            }
-
-            string response = Console.ReadLine().ToLower().Trim();
-            bool valid = (response == "fire" || response == "water" || response == "forest") ? true : false;
-
-            while (!valid)
-            {
-                Console.Write($"\n{response} is not a valid choice!\n");
-
                 Console.Write($"\nWhich temple would you like to go to?");
-                Console.WriteLine("Temples:");
+                Console.WriteLine("\nTemples:");
 
                 foreach (var item in temples)
                 {
                     Console.WriteLine("- " + item);
                 }
-                response = Console.ReadLine().ToLower().Trim();
-                valid = (response == "fire" || response == "water" || response == "forest") ? true : false;
+
+                string response = Console.ReadLine().ToLower().Trim();
+                bool valid = (response == "fire" || response == "water" || response == "forest") ? true : false;
+
+                while (!valid)
+                {
+                    Console.Write($"\n{response} is not a valid choice!\n");
+
+                    Console.Write($"\nWhich temple would you like to go to?");
+                    Console.WriteLine("Temples:");
+
+                    foreach (var item in temples)
+                    {
+                        Console.WriteLine("- " + item);
+                    }
+                    response = Console.ReadLine().ToLower().Trim();
+                    valid = (response == "fire" || response == "water" || response == "forest") ? true : false;
+                }
+
+                SetupNeuralNetwork(response);
+
+                Console.WriteLine("\nLoading...");
+                Console.WriteLine("\n\nCompleted!");
+
+                player = SetupPlayer();
+
+                Fight();
+
+                Console.Write("Want to run again? (y/n): ");
+                var input = Console.ReadLine().ToLower();
+                var cont = input == "y" || input == "n" ? true : false;
+                while (!cont)
+                {
+                    Console.WriteLine($"\n{input} is not a valid choice!\n");
+
+                    Console.Write("Want to run again? (y/n): ");
+
+                    input = Console.ReadLine().ToLower().Trim();
+                    cont = input == "y" || input == "n" ? true : false;
+                }
+                if (input == "n") { end = true; }
             }
-
-            SetupNeuralNetwork(response);
-
-            Console.WriteLine("\nLoading...");
-            Console.WriteLine("\n\nCompleted!");
-
-            player = SetupPlayer();
-
-            Fight();
-
-            Console.ReadKey();
         }
         private void Fight()
         {
             var playerThink = playerNetwork.Think(player.Items);
-            double playerAtk = Math.Floor(playerThink[0, 0] * 100);
+            double playerAtk = Math.Round(playerThink[0, 0],2);
 
             while (!player.Defeated)
             {
@@ -98,10 +114,10 @@ namespace Final
         {
             double[,]? botThink = botNetwork.Think(bot.Items);
 
-            double botAtk = Math.Floor( botThink[0, 0] * 100);
+            double botAtk = Math.Round(botThink[0, 0],2);
 
             double playerDamage = (playerAtk*player.ATK) - (botAtk*bot.DEF);
-            double botDamage = (botAtk * player.ATK) - (playerAtk * player.DEF);
+            double botDamage = (botAtk * bot.ATK) - (playerAtk * player.DEF);
 
             return playerDamage > botDamage;
         }
@@ -187,7 +203,7 @@ namespace Final
             if (temple.ToLower() == "fire")
             {
                 playerTrainingInputs = new double[,] 
-                { // just 4
+                { // just 4 {0.13,0.10,0.19,0.99,0.25,0.18}
                     {0,0,0,1,0,0 },
                     {0,0,0,0,0,0 },
                     {1,1,1,0,1,1 },
@@ -201,24 +217,14 @@ namespace Final
 
 
                 botTrainingInputs = new double[,]
-                {
+                {   //{0.13,0.10,0.19,0.99,0.25,0.18}
                     {0,0,0,1,0,0 },
                     {0,0,0,0,0,0 },
                     {1,1,1,0,1,1 },
-
-
-                    //// just 1 or 6
-                    //{ 0,0,0,0,0,0 }, //0
-                    //{1,0,0,0,0,0 }, //1
-                    //{0,0,0,0,0,1 }, //1
-                    //{1,0,0,0,0,1 }, //1
-                    //{0,1,1,1,1,0 }, //0
-                    //{0,1,1,1,0,0 }, //0
                 };
                 botTrainingOutputs = NeuralNetWork.MatrixTranspose(new double[,]
                 {
                    {
-                     //0,1,1,1,0,0
                      1,0,0
                     }
                 });
@@ -229,7 +235,7 @@ namespace Final
             else if (temple.ToLower() == "forest")
             {
                 playerTrainingInputs = new double[,]
-                {  //can pick items 1 and 6 to get bonus
+                {  //1 and 6 {0.99,0.034,0.068,0.11,0.34,0.99}
                     { 0,0,0,0,0,0 }, //0
                     {1,0,0,0,0,0 }, //1
                     {0,0,0,0,0,1 }, //1
@@ -247,30 +253,14 @@ namespace Final
 
                 botTrainingInputs = new double[,]
                 {
+                    // just 4 {0.13,0.10,0.19,0.99,0.25,0.18}
                     {0,0,0,1,0,0 },
                     {0,0,0,0,0,0 },
                     {1,1,1,0,1,1 },
-
-                    //{ 0,0,0,0,0,0 }, //0
-                    //{ 0,0,0,1,0,0 }, //1
-                    //{ 1,1,1,1,0,1 }, //1
-                    //{ 1,0,0,0,0,1 }, //0
-                    //{ 0,0,1,0,0,0 }, //0
-                    //{0,0,0,0,0,1 }, //0
-                    //{1,0,0,0,0,0 }, //0
-                    //{0,1,1,1,1,0 }, //0
-                    //{0,1,1,1,0,0 }, //1
-                    //{0,1,1,0,1,0 }, //0
-                    //{0,1,0,1,1,0 }, //1
-                    //{1,1,1,0,0,0 }, //0
-                    //{1,1,1,0,1,1 }, //0
-                    //{1,1,1,0,0,1 }, //0
-                    //{0,1,0,0,0,0 }, //0
                 };
                 botTrainingOutputs = NeuralNetWork.MatrixTranspose(new double[,]
                 {
                    {
-                        //0,1,1,0,0,0,0,0,1,0,1,0,0,0,0
                          1,0,0
                     }
                 });
@@ -281,7 +271,7 @@ namespace Final
             else if (temple.ToLower() == "water")
             {
                 playerTrainingInputs = new double[,]
-                {  //can pick items 2,3 or 4 to get bonus
+                {  //can pick items 2,3 or 4 {0.000,0.99,0.99,0.99,0.00,0.00}
                    { 0,0,0,0,0,0 }, //0
                     {1,1,1,0,0,0}, //1
                     {1,1,1,1,1,1 }, //1
@@ -300,7 +290,7 @@ namespace Final
 
 
                 botTrainingInputs = new double[,]
-                { // just 4
+                { // {0.13,0.10,0.19,0.99,0.25,0.18}
                     {0,0,0,1,0,0 },
                     {0,0,0,0,0,0 },
                     {1,1,1,0,1,1 },
